@@ -111,4 +111,8 @@ Read only the reference that matches the current task:
 - [cli-reference.md](references/cli-reference.md): locally observed `c4-cli` command surface, command selection, exit-code interpretation, and known failure modes.
 - [mcp-reference.md](references/mcp-reference.md): CODESYS Development System MCP Server capabilities, licensing, CODESYS 3/4 boundary, and recommended agent architecture.
 - [ci-pipeline.md](references/ci-pipeline.md): executable PowerShell pipeline template.
+- [result-schema.md](references/result-schema.md): normalized sample-level result fields, log retention, and compatibility judgement rules.
+- [batch-compilation.md](references/batch-compilation.md): rules and usage for compiling a manifest of independent samples.
+
+For repeated dataset compilation, use [scripts/Invoke-Codesys4Batch.ps1](scripts/Invoke-Codesys4Batch.ps1) instead of rebuilding the orchestration script manually.
 
