@@ -52,7 +52,14 @@ function Invoke-CodesysCommand {
 function Read-TextOrEmpty {
     param([string]$Path)
     if (Test-Path -LiteralPath $Path) {
-        return [System.IO.File]::ReadAllText($Path)
+        for ($attempt = 0; $attempt -lt 20; $attempt++) {
+            try {
+                return [System.IO.File]::ReadAllText($Path)
+            } catch {
+                Start-Sleep -Milliseconds 250
+            }
+        }
+        return "[AGENT] Unable to read log stream after process exit: $Path"
     }
     return ''
 }
